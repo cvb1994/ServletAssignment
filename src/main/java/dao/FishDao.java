@@ -97,7 +97,7 @@ public class FishDao {
 		return totalRecords;
 	}
 	
-	public List<Fish> getFishPaginate(int page, String search, List<Integer> listPondId, int itemPerPage){
+	public List<Fish> getFishPaginate(int page, String search, int itemPerPage){
 		List<Fish> fishList = new ArrayList();
 		try {
 			em = emf.createEntityManager();

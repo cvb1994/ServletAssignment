@@ -230,16 +230,19 @@ public class PondDao {
 		}
 	}
 	
-	public void deletePond(int id) throws ExistException {
+	public String deletePond(int id) throws ExistException {
+		String message = "";
 		try {
 			em = emf.createEntityManager();
 			em.getTransaction().begin();
+
 			Pond pond = em.find(Pond.class, id);
-			if(pond != null){
+			if(pond != null && pond.getAmountOfType() == 0){
 				em.remove(pond);
 				em.getTransaction().commit();
+				message = "Xóa thành công";
 			} else {
-				throw new ExistException();
+				message = "Hồ có cá không thể xóa";
 			}
 			
 		} catch (Exception e) {
@@ -247,5 +250,6 @@ public class PondDao {
 		} finally {
 			em.close();
 		}
+		return message;
 	}
 }

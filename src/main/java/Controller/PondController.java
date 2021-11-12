@@ -124,8 +124,8 @@ public class PondController extends HttpServlet {
 	protected void getDelete(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		int pondId = Integer.parseInt(request.getParameter("id"));
 		try {
-			pondDao.deletePond(pondId);
-			request.setAttribute("message", "Xóa thành công");
+			String message = pondDao.deletePond(pondId);
+			request.setAttribute("message", message);
 			getPaginate(request, response);
 			
 		} catch (Exception e) {

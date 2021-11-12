@@ -166,7 +166,7 @@ public class FishController extends HttpServlet {
 			request.setAttribute("listPond", listPond);
 		}
 		int start = (page-1) * ITEM_PER_PAGE ;
-		List<Fish> fishList = fishDao.getFishPaginate(page-1,search, listPondId,ITEM_PER_PAGE);
+		List<Fish> fishList = fishDao.getFishPaginate(page-1,search,ITEM_PER_PAGE);
 		request.setAttribute("searchString",searchString);
 		request.setAttribute("page", page);
 		request.setAttribute("start", start);

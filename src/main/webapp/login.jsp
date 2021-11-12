@@ -67,12 +67,6 @@
 						</button>
 					</div>
 
-					<div class="text-center p-t-45 p-b-4">
-						<a href="Index" class="txt2 hov1">
-							Quay Lại
-						</a>
-					</div>
-
 				</form>
 			</div>
 		</div>
