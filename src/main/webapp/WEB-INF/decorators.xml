@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/decorators">
+    <excludes>
+        <pattern>/ServletAssignment_war_exploded/*</pattern>
+    </excludes>
+    <decorator name="main" page="/decorators/template.jsp">
+        <pattern>/admin/*</pattern>
+    </decorator>
+</decorators>
